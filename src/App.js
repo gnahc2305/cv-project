@@ -7,7 +7,34 @@ import "./style.css";
 class App extends Component {
   constructor() {
     super();
+
+    this.information = {
+      name: "",
+      title: "",
+      address: "",
+      phone: "",
+      email: "",
+      description: "",
+    };
+
+    this.experience = {
+      position: "",
+      company: "",
+      from: "",
+      to: "",
+    };
+
+    this.education = {
+      university: "",
+      city: "",
+      degree: "",
+    };
   }
+
+  setInformation = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+  };
 
   render() {
     return (
@@ -15,50 +42,42 @@ class App extends Component {
         <div className="info">
           <form>
             <h2>Personal Information</h2>
-            <input type='text' placeholder="Full Name"></input>
-            <input type='text' placeholder="Title"></input>
-            <input type='text' placeholder="Address"></input>
-            <input type='text' placeholder="Phone Number"></input>
-            <input type='text' placeholder="Email"></input>
-            <textarea placeholder="Description" rows='5' cols="30"></textarea>
-            <button>Submit</button>
+            <input type="text" placeholder="Full Name"></input>
+            <input type="text" placeholder="Title"></input>
+            <input type="text" placeholder="Address"></input>
+            <input type="text" placeholder="Phone Number"></input>
+            <input type="text" placeholder="Email"></input>
+            <textarea placeholder="Description" rows="5" cols="30"></textarea>
+            <button onClick={this.setInformation}>Submit</button>
           </form>
         </div>
-
 
         <div>
           <form>
             <h2>Experience</h2>
-            <input type='text' placeholder="Position"></input>
-            <input type='text' placeholder="Company"></input>
-            <input type='text' placeholder="From"></input>
-            <input type='text' placeholder="To"></input>
+            <input type="text" placeholder="Position"></input>
+            <input type="text" placeholder="Company"></input>
+            <input type="text" placeholder="From"></input>
+            <input type="text" placeholder="To"></input>
             <button>Submit</button>
           </form>
         </div>
-
 
         <div>
           <form>
             <h2>Education</h2>
-            <input type='text' placeholder="University"></input>
-            <input type='text' placeholder="City"></input>
-            <input type='text' placeholder="Degree"></input>
+            <input type="text" placeholder="University"></input>
+            <input type="text" placeholder="City"></input>
+            <input type="text" placeholder="Degree"></input>
             <button>Submit</button>
           </form>
         </div>
 
-
         <div className="cv">
-
-
           <Info></Info>
           <Experience></Experience>
           <Education></Education>
-
         </div>
-
-
       </div>
     );
   }
